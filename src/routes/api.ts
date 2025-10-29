@@ -12,6 +12,13 @@ router.post("/echo", (req: Request, res: Response) => {
   res.json({ echoed: data });
 });
 
+router.post("/payment/notify", (req: Request, res: Response) => {
+  console.log("Payment notification received:", req.body);
+  // Verify payment with PayHere server if needed
+  res.status(200).send("Notification received");
+});
+
+
 export default router; 
 
 
