@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import apiRouter from "./routes/api.js";
+import payhereRoutes from "./routes/payhere.js";
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", apiRouter);
+app.use("/api", payhereRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend is running!");
